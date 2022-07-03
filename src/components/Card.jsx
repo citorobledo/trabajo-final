@@ -3,7 +3,8 @@ import Card from 'react-bootstrap/Card'
 import  {React, useState}from 'react'
 
 const Tarjeta = ({unaPelicula}) => {
-
+//para traer una imagen de una pelicula hay que poner la base https://image.tmdb.org/t/p/w500 + poster_path
+// el tamaño se maneja con el parametro w500
   const portada = "https://image.tmdb.org/t/p/w400" + unaPelicula.poster_path;
 
   return (

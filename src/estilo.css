@@ -3,16 +3,11 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: beige;
+  color: white;
+  min-height: 10vh;
 }
 .App-footer {
-  color: beige;
+  color: white;
   background-color: #282c34;
 
 }
@@ -21,16 +16,34 @@
   justify-content: space-around;
 }
 .App-Card{
-  width: 25%;
-  height: 25%;
-  background-color: #282c34;
+  width: 20%;
+  height: 20%;
+  background-color: beige;
   color: #282c34;
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  margin: 5px;
+  padding: 5px
 }
 .App-Body{
+  margin-top: 5%;
+  margin-bottom: 5%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  align-items: center;
+ 
   justify-content: center;
+  list-style: none
+}
+.flex-item {
+  
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
 }

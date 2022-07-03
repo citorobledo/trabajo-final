@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import Header  from "./components/Header";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
-import { Col, Button } from 'react-bootstrap';
+import { Col, Button, Body, CardGroup } from 'react-bootstrap';
 
 
 
@@ -29,12 +29,24 @@ function App() {
   return (
     <Fragment>
       <Header/>
-      <div className="App-Body">
-        <Card unaPelicula = {pelicula}>
+      <CardGroup className="App-Body">
+        <Card className="flex-item" unaPelicula = {pelicula} >
         </Card>  
-        <Card unaPelicula = {pelicula}>
+        <Card className="flex-item" unaPelicula = {pelicula}>
         </Card> 
-      </div>
+        <Card className="flex-item" unaPelicula = {pelicula}>
+        </Card>
+        <Card className="flex-item" unaPelicula = {pelicula}>
+        </Card>
+        <Card className="flex-item" unaPelicula = {pelicula}>
+        </Card>
+        <Card className="flex-item" unaPelicula = {pelicula}>
+        </Card>
+        <Card unaPelicula = {pelicula}>
+        </Card>
+        <Card className="flex-item" unaPelicula = {pelicula}>
+        </Card>
+      </CardGroup>
         
       <Button 
       variant="secondary"
