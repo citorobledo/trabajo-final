@@ -7,7 +7,7 @@ const GrupoCard = ({peliculas}) => {
     <CardGroup className="Card-grup" >
       {peliculas.map((unaPelicula) => (
         <Card className="Card">
-          <Card.Body className = "Card-Body" >
+          <Card.Body className = "Card-Body">
             <Card.Title>{unaPelicula.title} </Card.Title>
             <Card.Img alt={unaPelicula.title} src={`https://image.tmdb.org/t/p/w500${unaPelicula.poster_path}`} />
             <Card.Text>

@@ -1,16 +1,10 @@
-import {React, useEffect, useState} from "react";
+import {React} from "react";
 import "../estilo.css";
-import { Navbar, Nav, Form, FormControl, Button,Container } from 'react-bootstrap';
-import setBusqueda from "../App.js";
-import buscarPelicula from "../App.js";
-
+import { Navbar, Nav,Container } from 'react-bootstrap';
 
 const Header = () => {
-  
- 
- 
   return (
-    <Navbar  Button expand="lg"   variant="dark" >
+    <Navbar expand="lg"   variant="dark" >
       <Container >
         <Navbar.Brand href="#">Todo Pelis</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

@@ -1,12 +1,10 @@
 import {React, Img} from "react";
-import { Col, Button, Row, Container } from 'react-bootstrap';
-
-
+import { Col, Row, Container } from 'react-bootstrap';
 
 const Footer = () => {
   return (
     <footer className="App-footer" >
-      <Container className="App-Container">
+      <Container className="App-Container" >
         <Row >
           <Col>
           <h3>Esenciales</h3>

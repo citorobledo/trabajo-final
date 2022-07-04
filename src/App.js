@@ -1,31 +1,21 @@
-import { Fragment, useEffect, useState, useSelector } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Header  from "./components/Header";
 import Footer from "./components/Footer";
-import Card from "./components/Card";
-import { Col, Button, Body, CardGroup, Form, FormControl, Container, Row } from 'react-bootstrap';
-import peliculas from "./components/Header";
+import { Col, Button, Form, FormControl, Container, Row } from 'react-bootstrap';
 import GrupoCard from "./components/GrupoCard";
-
 
 function App() {
   // Creamos un state para las peliculas
-  const [busqueda, setBusqueda] = useState();
-  console.log(busqueda);
+  const [busqueda, setBusqueda] = useState("https://api.themoviedb.org/3/movie/popular?api_key=7d83be0ccc6bcb1703f785a21f52ecea&language=en-US&page=1");
   const [peliculas, setPeliculas] = useState([]);
-  console.log(peliculas);
-  
-  
-
+  const url1 = `https://api.themoviedb.org/3/search/movie?api_key=7d83be0ccc6bcb1703f785a21f52ecea&query=${busqueda}`;
   // funcion que consulta a la API por una determinada pelicula.
-  const consultarPeliculaAPI = async () => {
-    
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=7d83be0ccc6bcb1703f785a21f52ecea&query=${busqueda}`;
+  const consultarPeliculaAPI = async (url) => {
     try {           // el try es para que no de error si no hay respuesta de la API.
       const respuestaAPI = await fetch(url);
       const listaPeliculas = await respuestaAPI.json();
       setPeliculas(listaPeliculas.results);
-
-    } 
+    }
     catch (error) {
       console.log(error);
     }
@@ -33,23 +23,29 @@ function App() {
   const buscarPelicula = (nombrePelicula) => {
     if (busqueda !== "" && nombrePelicula !== null) {
       setBusqueda(nombrePelicula);
-      consultarPeliculaAPI();
-      }
+      consultarPeliculaAPI(url1);
+    }
   }
-
+  const handleChange = (e) => {
+    setBusqueda(e.target.value);
+  }
+  useEffect(() => {
+    consultarPeliculaAPI(busqueda);
+  });
+  
   return (
-    <Fragment>
-      
-      <Container 
+    <Fragment >
+      <Container
         style={{
-          position: "sticky",  
           top: 0,
           zIndex: 1,
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <Row className="App-header">
           <Col>
-            <Header/>
+            <Header />
           </Col>
           <Col className="Button">
             <Form className="d-flex"  >
@@ -59,31 +55,23 @@ function App() {
                 className="me-2"
                 aria-label="Buscar"
                 id="inputBuscar"
+                onChange={handleChange}
               />
               <Button
                 variant="secondary"
                 id="buscar"
                 type="button"
+                onClick={() => buscarPelicula(busqueda)}
               >
                 Buscar
               </Button>
             </Form>
           </Col>
-
         </Row>
       </Container>
-      
-      
       <GrupoCard peliculas={peliculas} />
-      <Button
-        variant="secondary"
-        type="button"
-        onClick={() => buscarPelicula("batman")}
-      >Buscar pelicula
-      </Button>
       <Footer />
     </Fragment>
   );
 }
-
 export default App;
