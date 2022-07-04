@@ -10,8 +10,8 @@ const Header = () => {
  
  
   return (
-    <Navbar className="App-header" expand="lg" fixed="top" variant="dark">
-      <Container fluid>
+    <Navbar  Button expand="lg"   variant="dark" >
+      <Container >
         <Navbar.Brand href="#">Todo Pelis</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -25,23 +25,7 @@ const Header = () => {
             <Nav.Link href="#action3">Recomendadas</Nav.Link>
             <Nav.Link href="#action4">Mis Favoritas</Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <FormControl
-              type="search"
-              placeholder="Buscar Pelis"
-              className="me-2"
-              aria-label="Buscar"
-              id="inputBuscar"
-            />
-            <Button
-             variant="secondary" 
-             id="buscar" 
-             type="button"
-       
-             >
-               Buscar
-            </Button>
-          </Form>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>    

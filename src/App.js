@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState, useSelector } from "react";
 import Header  from "./components/Header";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
-import { Col, Button, Body, CardGroup } from 'react-bootstrap';
+import { Col, Button, Body, CardGroup, Form, FormControl, Container, Row } from 'react-bootstrap';
 import peliculas from "./components/Header";
 import GrupoCard from "./components/GrupoCard";
 
@@ -39,7 +39,41 @@ function App() {
 
   return (
     <Fragment>
-      <Header />
+      
+      <Container 
+        style={{
+          position: "sticky",  
+          top: 0,
+          zIndex: 1,
+        }}
+      >
+        <Row className="App-header">
+          <Col>
+            <Header/>
+          </Col>
+          <Col className="Button">
+            <Form className="d-flex"  >
+              <FormControl
+                type="search"
+                placeholder="Buscar Pelis"
+                className="me-2"
+                aria-label="Buscar"
+                id="inputBuscar"
+              />
+              <Button
+                variant="secondary"
+                id="buscar"
+                type="button"
+              >
+                Buscar
+              </Button>
+            </Form>
+          </Col>
+
+        </Row>
+      </Container>
+      
+      
       <GrupoCard peliculas={peliculas} />
       <Button
         variant="secondary"
