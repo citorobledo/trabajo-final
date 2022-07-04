@@ -1,8 +1,14 @@
-import React from "react";
+import {React, useEffect, useState} from "react";
 import "../estilo.css";
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button,Container } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button,Container } from 'react-bootstrap';
+import setBusqueda from "../App.js";
+import buscarPelicula from "../App.js";
+
 
 const Header = () => {
+  
+ 
+ 
   return (
     <Navbar className="App-header" expand="lg" fixed="top" variant="dark">
       <Container fluid>
@@ -25,8 +31,16 @@ const Header = () => {
               placeholder="Buscar Pelis"
               className="me-2"
               aria-label="Buscar"
+              id="inputBuscar"
             />
-            <Button variant="secondary">Buscar</Button>
+            <Button
+             variant="secondary" 
+             id="buscar" 
+             type="button"
+       
+             >
+               Buscar
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>
