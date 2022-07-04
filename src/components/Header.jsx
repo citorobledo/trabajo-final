@@ -6,7 +6,18 @@ const Header = () => {
   return (
     <Navbar expand="lg"   variant="dark" >
       <Container >
-        <Navbar.Brand href="#">Todo Pelis</Navbar.Brand>
+        <Navbar.Brand href="#"
+        style={
+          {
+            fontSize: "30px",
+            fontWeight: "bold",
+           
+            border: "2px solid #fff",
+            borderRadius: "10px",
+            padding: "8px",
+          }
+        }
+        >Todo Pelis</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
