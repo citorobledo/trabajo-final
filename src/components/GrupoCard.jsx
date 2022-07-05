@@ -13,9 +13,7 @@ const GrupoCard = ({peliculas}) => {
             <Card.Img alt={unaPelicula.title} src={`https://image.tmdb.org/t/p/w500${unaPelicula.poster_path}`} />
             <Card.Text>
               <h5 className="h5">Lanzamiento   {unaPelicula.release_date}</h5>
-             
               <h5 className="h5">Puntuación   {unaPelicula.vote_average}</h5>
-              
               {unaPelicula.overview}
             </Card.Text>
           </Card.Body>

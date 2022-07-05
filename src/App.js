@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     consultarPeliculaAPI(busqueda);
   });
-  
+
   return (
     <Fragment >
       <Container
