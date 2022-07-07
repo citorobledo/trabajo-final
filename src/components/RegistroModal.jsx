@@ -2,15 +2,17 @@ import {Fragment, React, useEffect, useState} from "react";
 import { Modal, Button, Form } from 'react-bootstrap';
 
 
+
+
   function RegistroModal({mostrar}) {
-    // inicializamos almacenamiento local.
+     // inicializamos almacenamiento local.
     let registro = JSON.parse(localStorage.getItem("usuariosRegistrados"));
     const [usuariosRegistrados, setUsuariosRegistrados] = useState(registro);
-   
     if (!registro) {
       registro = [];
+      localStorage.setItem("usuariosRegistrados", JSON.stringify(registro));
     };
-    
+
     useEffect(() => {
       //codigo que se ejecuta cuando cambia el estado de la variuable.
       if (registro){ // si existe el almacenamiento local registro.
@@ -19,18 +21,17 @@ import { Modal, Button, Form } from 'react-bootstrap';
         localStorage.setItem("usuariosRegistrados", JSON.stringify([]));// creamos un almacenamiento local vacio.
       };
     }, [registro]);//la variable a observar.
-    
+
     // funcion que mete un usuario en la lista de usuariosRegistrados.
     const agregarUsuario = (usuario) => {
-      
       setUsuariosRegistrados([...usuariosRegistrados, usuario])// los ... son para que no se pierda el array original.
     };
 
     // funcion que elimina un usuario de la lista de usuariosRegistrados.
     const eliminarUsuario = (usuario) => {
       setUsuariosRegistrados(usuariosRegistrados.filter(u => u.id !== usuario.id));
-      console.log(usuario)
-      console.log(registro)
+      
+      
     };
 
     const [user, setUser] = useState({

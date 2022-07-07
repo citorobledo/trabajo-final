@@ -4,7 +4,22 @@ import Footer from "./components/Footer";
 import { Col, Button, Form, FormControl, Container, Row } from 'react-bootstrap';
 import GrupoCard from "./components/GrupoCard";
 
+
 function App() {
+  //let registro = JSON.parse(localStorage.getItem("usuariosRegistrados"));
+  //if (!registro) {
+  //  registro = [];
+  //};
+  //const [usuariosRegistrados, setUsuariosRegistrados] = useState(registro);
+  //useEffect(() => {
+  //  //codigo que se ejecuta cuando cambia el estado de la variuable.
+  //  if (registro){ // si existe el almacenamiento local registro.
+  //    localStorage.setItem("usuariosRegistrados", JSON.stringify(usuariosRegistrados));  // actualizamos el almacenamiento local. stringify convierte el objeto a string.
+  //  }else{// si no existe el almacenamiento local registro.
+  //    localStorage.setItem("usuariosRegistrados", JSON.stringify([]));// creamos un almacenamiento local vacio.
+  //  };
+  //}, [registro]);//la variable a observar.
+//
   // Creamos un state para las peliculas
   const [busqueda, setBusqueda] = useState("https://api.themoviedb.org/3/movie/popular?api_key=7d83be0ccc6bcb1703f785a21f52ecea&language=en-US&page=1");
   const [peliculas, setPeliculas] = useState([]);

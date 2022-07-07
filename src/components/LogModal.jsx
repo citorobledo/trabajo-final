@@ -1,14 +1,12 @@
 import {Fragment, React, useState} from "react";
 import { Modal, Button, Form } from 'react-bootstrap';
-//import usuariosRegistrados from "./components/registroModal.jsx";
 
-  
+
   function Modall({mostrar, saludo}) {
     let registro = JSON.parse(localStorage.getItem("usuariosRegistrados"));
     
     const [usuario, setUsuario] = useState("");
     const [contraseña, setContraseña] = useState("");
-    
 
     function ingresar(email, contraseña) {
       if (email !== "" && contraseña !== "") {
@@ -23,8 +21,6 @@ import { Modal, Button, Form } from 'react-bootstrap';
         }
 
       }
-      console.log(email, contraseña);
-      
     }
     const usuarioChange = (e) => {
       setUsuario(e.target.value);
@@ -32,7 +28,6 @@ import { Modal, Button, Form } from 'react-bootstrap';
     const contraseñaChange = (e) => {
       setContraseña(e.target.value);
     }
-  
     return (
       <Fragment>
         <Modal show={mostrar} onHide={false}>
@@ -76,5 +71,4 @@ import { Modal, Button, Form } from 'react-bootstrap';
       </Fragment>
     );
   }
-  
   export default Modall;
