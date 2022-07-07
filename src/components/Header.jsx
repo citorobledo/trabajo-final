@@ -2,41 +2,29 @@ import {React, useState} from "react";
 import "../estilo.css";
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import "../App.js";  
-import Modall from "./Modal.js";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import Modall from "./LogModal.jsx";
+import  RegistroModal from "./RegistroModal.jsx";
 
 const Header = () => {
-
  // state del modal
- const [estadoModal, setEtadoModal] = useState(false);
-
+ const [estadoModal, setEstadoModal] = useState(false);
+ const [registroModal, setRegistroModal] = useState(false);
+ // state del login
+  const [saludoUsuario, setSaludoUsuario] = useState("");
 
   return (
-    <Navbar expand="lg"   variant="dark" >
+    <Navbar expand="lg" variant="dark" >
       <Container >
-        <Navbar.Brand href="App.js"
-        style={
-          {
-            fontSize: "30px",
-            fontWeight: "bold",
-            border: "2px solid #fff",
-            borderRadius: "10px",
-            padding: "8px",
+        <Navbar.Brand href="#"
+          style={
+            {
+              fontSize: "30px",
+              fontWeight: "bold",
+              border: "2px solid #fff",
+              borderRadius: "10px",
+              padding: "8px",
+            }
           }
-        }
         >Todo Pelis
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -46,22 +34,19 @@ const Header = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="App.js">Home</Nav.Link>
-            <Nav.Link 
-            onClick={() => setEtadoModal(true)}
-          
-            
+            <Nav.Link href="#">Home</Nav.Link>
+            <Nav.Link onClick={() => setEstadoModal(true)}
             >Login</Nav.Link>
-            <Nav.Link href="#action3">Registrate</Nav.Link>
+            <Nav.Link onClick={() => setRegistroModal(true)}
+            >Registrate</Nav.Link>
             <Nav.Link href="#action4">Mis Favoritas</Nav.Link>
+            <Navbar class="navbar">{saludoUsuario}</Navbar>
           </Nav>
-          
         </Navbar.Collapse>
       </Container>
 
-      {estadoModal && <Modall mostrar={setEtadoModal}/>}
-
-
+      {estadoModal && <Modall mostrar={setEstadoModal} saludo={setSaludoUsuario} />}
+      {registroModal && <RegistroModal mostrar={setRegistroModal} />}
 
     </Navbar>    
   );  
